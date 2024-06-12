@@ -57,7 +57,7 @@ ROOST_METHOD_SIG_HASH=activitySelection_bf79d28a9f
 */
 
 // ********RoostGPT********
-<properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-</properties>
+// <properties>
+//     <maven.compiler.source>1.8</maven.compiler.source>
+//     <maven.compiler.target>1.8</maven.compiler.target>
+// </properties>

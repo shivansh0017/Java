@@ -55,8 +55,13 @@ Details:
     Verify that the returned value is zero, as no items are available to put in the knapsack. This test is significant as it ensures that the function correctly handles edge cases.
 """
 */
+package com.thealgorithms.greedyalgorithms;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 // ********RoostGPT********
+class FractionalKnapsackFractionalKnapsackTest{
 @Test
 public void testFractionalKnapsackWithDifferentInputs() {
     int[] weight = {10, 30, 20};
@@ -64,4 +69,5 @@ public void testFractionalKnapsackWithDifferentInputs() {
     int capacity = 50;
     int expected = 220;
     assertEquals(expected, FractionalKnapsack.fractionalKnapsack(weight, value, capacity));
+}
 }
