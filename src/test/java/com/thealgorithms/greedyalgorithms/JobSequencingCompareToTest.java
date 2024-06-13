@@ -51,7 +51,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class JobSequencingCompareToTest {
-    Job job1, job2;
+    JobSequencing.Job job1, job2;
 
     @BeforeEach
     public void setUp() {
@@ -61,21 +61,21 @@ public class JobSequencingCompareToTest {
 
     @Test
     public void compareSameProfitJobs() {
-        job1 = new Job('A', 2, 100);
-        job2 = new Job('B', 1, 100);
+        job1 = new JobSequencing.Job('A', 2, 100);
+        job2 = new JobSequencing.Job('B', 1, 100);
         assertEquals(0, job1.compareTo(job2));
     }
 
     @Test
     public void compareDifferentProfitJobs() {
-        job1 = new Job('A', 2, 100);
-        job2 = new Job('B', 1, 150);
+        job1 = new JobSequencing.Job('A', 2, 100);
+        job2 = new JobSequencing.Job('B', 1, 150);
         assertTrue(job1.compareTo(job2) > 0);
     }
 
     @Test
     public void compareWithNullJob() {
-        job1 = new Job('A', 2, 100);
+        job1 = new JobSequencing.Job('A', 2, 100);
         assertThrows(NullPointerException.class, () -> job1.compareTo(null));
     }
 }

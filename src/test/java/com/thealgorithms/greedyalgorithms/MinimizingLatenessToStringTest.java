@@ -53,7 +53,7 @@ import java.util.Arrays;
 public class MinimizingLatenessToStringTest {
     @Test
     public void validateFormattingOfJobRepresentation() {
-        Job job = new Job("Job 1", 2, 5);
+        MinimizingLateness.Job job = new MinimizingLateness.Job("Job 1", 2, 5);
         job.startTime = 1;
         job.lateness = 0;
         String expected = "Job 1, startTime: 1, endTime: 3, lateness: 0";
@@ -62,10 +62,14 @@ public class MinimizingLatenessToStringTest {
     }
     @Test
     public void validateFormattingWithNullStartTime() {
-        Job job = new Job("Job 2", 3, 6);
+        MinimizingLateness.Job job = new MinimizingLateness.Job("Job 2", 3, 6);
         // Handling null for startTime
-        if (job.startTime == null) {
-            job.startTime = 0;
+        // if (job.startTime == null) {
+        // edited out because job.startTime cannot be 0
+            // job.startTime = 0;
+        // }
+        if (job.startTime == 0){
+          job.startTime = 0;
         }
         job.lateness = 1;
         String expected = "Job 2, startTime: null, endTime: null, lateness: 1";
@@ -74,7 +78,7 @@ public class MinimizingLatenessToStringTest {
     }
     @Test
     public void validateFormattingWithEmptyJobName() {
-        Job job = new Job("", 4, 7);
+        MinimizingLateness.Job job = new MinimizingLateness.Job("", 4, 7);
         job.startTime = 2;
         job.lateness = 2;
         String expected = ", startTime: 2, endTime: 6, lateness: 2";

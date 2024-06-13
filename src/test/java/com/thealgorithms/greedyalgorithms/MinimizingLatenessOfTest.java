@@ -71,11 +71,11 @@ public class MinimizingLatenessOfTest {
         int processingTime = 5;
         int deadline = 10;
         
-        Job job = Job.of(jobName, processingTime, deadline);
+        MinimizingLateness.Job job = MinimizingLateness.Job.of(jobName, processingTime, deadline);
         
-        assertEquals(jobName, job.getJobName());
-        assertEquals(processingTime, job.getProcessingTime());
-        assertEquals(deadline, job.getDeadline());
+        assertEquals(jobName, job.jobName);
+        assertEquals(processingTime, job.processingTime);
+        assertEquals(deadline, job.deadline);
     }
     @Test
     public void testDeadlineLessThanProcessingTime() {
@@ -83,7 +83,7 @@ public class MinimizingLatenessOfTest {
         int processingTime = 10;
         int deadline = 5;
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            Job job = Job.of(jobName, processingTime, deadline);
+            MinimizingLateness.Job job = MinimizingLateness.Job.of(jobName, processingTime, deadline);
         });
         
         // TODO: Add your assertion message below
@@ -98,7 +98,7 @@ public class MinimizingLatenessOfTest {
         int processingTime = 5;
         int deadline = 10;
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            Job job = Job.of(jobName, processingTime, deadline);
+            MinimizingLateness.Job job = MinimizingLateness.Job.of(jobName, processingTime, deadline);
         });
         // TODO: Add your assertion message below
         String expectedMessage = "Job name cannot be null";
@@ -111,8 +111,8 @@ public class MinimizingLatenessOfTest {
         String jobName = "Job1";
         int processingTime = 5;
         int deadline = 10;
-        Job job1 = Job.of(jobName, processingTime, deadline);
-        Job job2 = Job.of(jobName, processingTime, deadline);
+        MinimizingLateness.Job job1 = MinimizingLateness.Job.of(jobName, processingTime, deadline);
+        MinimizingLateness.Job job2 = MinimizingLateness.Job.of(jobName, processingTime, deadline);
         assertSame(job1, job2);
     }
 }
