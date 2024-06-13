@@ -64,6 +64,55 @@ Validation:
 */
 
 // ********RoostGPT********
+// package com.thealgorithms.greedyalgorithms;
+// import static org.junit.jupiter.api.Assertions.assertEquals;
+// import static org.junit.jupiter.api.Assertions.assertNull;
+// import org.junit.jupiter.api.Test;
+// import java.util.Arrays;
+
+// public class MinimizingLatenessOfTest {
+//     @Test
+//     public void validateJobCreationWithValidParameters() {
+//         String jobName = "Test Job";
+//         int processingTime = 5;
+//         int deadline = 10;
+//         Job job = Job.of(jobName, processingTime, deadline);
+//         assertEquals(jobName, job.getJobName());
+//         assertEquals(processingTime, job.getProcessingTime());
+//         assertEquals(deadline, job.getDeadline());
+//     }
+//     @Test
+//     public void validateJobCreationWithNullJobName() {
+//         String jobName = null;
+//         int processingTime = 5;
+//         int deadline = 10;
+//         Job job = Job.of(jobName, processingTime, deadline);
+//         assertNull(job.getJobName());
+//         assertEquals(processingTime, job.getProcessingTime());
+//         assertEquals(deadline, job.getDeadline());
+//     }
+//     @Test
+//     public void validateJobCreationWithNegativeProcessingTime() {
+//         String jobName = "Test Job";
+//         int processingTime = -5;
+//         int deadline = 10;
+//         Job job = Job.of(jobName, processingTime, deadline);
+//         assertEquals(jobName, job.getJobName());
+//         assertEquals(processingTime, job.getProcessingTime());
+//         assertEquals(deadline, job.getDeadline());
+//     }
+//     @Test
+//     public void validateJobCreationWithZeroDeadline() {
+//         String jobName = "Test Job";
+//         int processingTime = 5;
+//         int deadline = 0;
+//         Job job = Job.of(jobName, processingTime, deadline);
+//         assertEquals(jobName, job.getJobName());
+//         assertEquals(processingTime, job.getProcessingTime());
+//         assertEquals(deadline, job.getDeadline());
+//     }
+// }
+
 package com.thealgorithms.greedyalgorithms;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -76,39 +125,39 @@ public class MinimizingLatenessOfTest {
         String jobName = "Test Job";
         int processingTime = 5;
         int deadline = 10;
-        Job job = Job.of(jobName, processingTime, deadline);
-        assertEquals(jobName, job.getJobName());
-        assertEquals(processingTime, job.getProcessingTime());
-        assertEquals(deadline, job.getDeadline());
+        MinimizingLateness.Job job = MinimizingLateness.Job.of(jobName, processingTime, deadline);
+        assertEquals(jobName, job.jobName);
+        assertEquals(processingTime, job.processingTime);
+        assertEquals(deadline, job.deadline);
     }
     @Test
     public void validateJobCreationWithNullJobName() {
         String jobName = null;
         int processingTime = 5;
         int deadline = 10;
-        Job job = Job.of(jobName, processingTime, deadline);
-        assertNull(job.getJobName());
-        assertEquals(processingTime, job.getProcessingTime());
-        assertEquals(deadline, job.getDeadline());
+        MinimizingLateness.Job job = MinimizingLateness.Job.of(jobName, processingTime, deadline);
+        assertNull(job.jobName);
+        assertEquals(processingTime, job.processingTime);
+        assertEquals(deadline, job.deadline);
     }
     @Test
     public void validateJobCreationWithNegativeProcessingTime() {
         String jobName = "Test Job";
         int processingTime = -5;
         int deadline = 10;
-        Job job = Job.of(jobName, processingTime, deadline);
-        assertEquals(jobName, job.getJobName());
-        assertEquals(processingTime, job.getProcessingTime());
-        assertEquals(deadline, job.getDeadline());
+        MinimizingLateness.Job job = MinimizingLateness.Job.of(jobName, processingTime, deadline);
+        assertEquals(jobName, job.jobName);
+        assertEquals(processingTime, job.processingTime);
+        assertEquals(deadline, job.deadline);
     }
     @Test
     public void validateJobCreationWithZeroDeadline() {
         String jobName = "Test Job";
         int processingTime = 5;
         int deadline = 0;
-        Job job = Job.of(jobName, processingTime, deadline);
-        assertEquals(jobName, job.getJobName());
-        assertEquals(processingTime, job.getProcessingTime());
-        assertEquals(deadline, job.getDeadline());
+        MinimizingLateness.Job job = MinimizingLateness.Job.of(jobName, processingTime, deadline);
+        assertEquals(jobName, job.jobName);
+        assertEquals(processingTime, job.processingTime);
+        assertEquals(deadline, job.deadline);
     }
 }

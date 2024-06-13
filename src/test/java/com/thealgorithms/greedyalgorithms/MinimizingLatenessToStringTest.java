@@ -57,6 +57,54 @@ Validation:
 */
 
 // ********RoostGPT********
+// package com.thealgorithms.greedyalgorithms;
+// import org.junit.jupiter.api.Test;
+// import static org.junit.jupiter.api.Assertions.assertEquals;
+// import java.util.Arrays;
+
+// public class MinimizingLatenessToStringTest {
+//     @Test
+//     public void testToStringWithDefaultValues() {
+//         Job job = new Job(null, 0, 0);
+//         job.startTime = 0;
+//         job.lateness = 0;
+//         String actual = job.toString();
+//         String expected = "null, startTime: 0, endTime: 0, lateness: 0";
+//         assertEquals(expected, actual);
+//     }
+    
+//     @Test
+//     public void testToStringWithTypicalValues() {
+//         Job job = new Job("TestJob", 10, 15);
+//         job.startTime = 5;
+//         job.lateness = 2;
+//         String actual = job.toString();
+//         String expected = "TestJob, startTime: 5, endTime: 15, lateness: 2";
+//         assertEquals(expected, actual);
+//     }
+    
+//     @Test
+//     public void testToStringWhenStartTimeGreaterThanProcessingTime() {
+//         Job job = new Job("TestJob", 10, 20);
+//         job.startTime = 15;
+//         job.lateness = 2;
+//         String actual = job.toString();
+//         String expected = "TestJob, startTime: 15, endTime: 25, lateness: 2";
+//         assertEquals(expected, actual);
+//     }
+    
+//     @Test
+//     public void testToStringWhenJobNameIsEmpty() {
+//         Job job = new Job("", 10, 15);
+//         job.startTime = 5;
+//         job.lateness = 2;
+//         String actual = job.toString();
+//         String expected = ", startTime: 5, endTime: 15, lateness: 2";
+//         assertEquals(expected, actual);
+//     }
+// }
+
+
 package com.thealgorithms.greedyalgorithms;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -65,7 +113,7 @@ import java.util.Arrays;
 public class MinimizingLatenessToStringTest {
     @Test
     public void testToStringWithDefaultValues() {
-        Job job = new Job(null, 0, 0);
+        MinimizingLateness.Job job = new MinimizingLateness.Job(null, 0, 0);
         job.startTime = 0;
         job.lateness = 0;
         String actual = job.toString();
@@ -75,7 +123,7 @@ public class MinimizingLatenessToStringTest {
     
     @Test
     public void testToStringWithTypicalValues() {
-        Job job = new Job("TestJob", 10, 15);
+        MinimizingLateness.Job job = new MinimizingLateness.Job("TestJob", 10, 15);
         job.startTime = 5;
         job.lateness = 2;
         String actual = job.toString();
@@ -85,7 +133,7 @@ public class MinimizingLatenessToStringTest {
     
     @Test
     public void testToStringWhenStartTimeGreaterThanProcessingTime() {
-        Job job = new Job("TestJob", 10, 20);
+        MinimizingLateness.Job job = new MinimizingLateness.Job("TestJob", 10, 20);
         job.startTime = 15;
         job.lateness = 2;
         String actual = job.toString();
@@ -95,7 +143,7 @@ public class MinimizingLatenessToStringTest {
     
     @Test
     public void testToStringWhenJobNameIsEmpty() {
-        Job job = new Job("", 10, 15);
+        MinimizingLateness.Job job = new MinimizingLateness.Job("", 10, 15);
         job.startTime = 5;
         job.lateness = 2;
         String actual = job.toString();

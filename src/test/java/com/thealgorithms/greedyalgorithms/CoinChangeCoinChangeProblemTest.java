@@ -59,11 +59,11 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class CoinChangeProblemTest {
+public class CoinChangeCoinChangeProblemTest {
     @Test
     public void testWithZeroAmount() {
         int amount = 0;
-        ArrayList<Integer> result = CoinChangeProblem.coinChangeProblem(amount);
+        ArrayList<Integer> result = CoinChange.coinChangeProblem(amount);
         assertTrue(result.isEmpty(), "List should be empty for zero amount");
         // No changes needed in this test case or the business logic based on the given error
     }
@@ -71,7 +71,7 @@ public class CoinChangeProblemTest {
     @Test
     public void testWithNegativeAmount() {
         int amount = -5;
-        ArrayList<Integer> result = CoinChangeProblem.coinChangeProblem(amount);
+        ArrayList<Integer> result = CoinChange.coinChangeProblem(amount);
         assertTrue(result.isEmpty(), "List should be empty for negative amount");
         // No changes needed in this test case or the business logic based on the given error
     }
@@ -79,7 +79,7 @@ public class CoinChangeProblemTest {
     @Test
     public void testWithPositiveAmount() {
         int amount = 87;
-        ArrayList<Integer> result = CoinChangeProblem.coinChangeProblem(amount);
+        ArrayList<Integer> result = CoinChange.coinChangeProblem(amount);
         assertFalse(result.isEmpty(), "List should not be empty for positive amount");
         assertEquals(amount, result.stream().mapToInt(Integer::intValue).sum(), "Sum of coins should equal the amount");
         // No changes needed in this test case or the business logic based on the given error
@@ -88,7 +88,7 @@ public class CoinChangeProblemTest {
     @Test
     public void testWithLargeAmount() {
         int amount = 1000000;
-        ArrayList<Integer> result = CoinChangeProblem.coinChangeProblem(amount);
+        ArrayList<Integer> result = CoinChange.coinChangeProblem(amount);
         assertFalse(result.isEmpty(), "List should not be empty for large amount");
         assertEquals(amount, result.stream().mapToInt(Integer::intValue).sum(), "Sum of coins should equal the amount");
         // No changes needed in this test case or the business logic based on the given error

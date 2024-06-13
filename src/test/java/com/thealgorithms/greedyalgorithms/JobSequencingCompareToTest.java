@@ -65,20 +65,68 @@ ROOST_METHOD_SIG_HASH=compareTo_de6640218f
 */
 
 // ********RoostGPT********
+// package com.thealgorithms.greedyalgorithms;
+
+// import org.junit.jupiter.api.Test;
+// import static org.junit.jupiter.api.Assertions.*;
+// import java.util.ArrayList;
+// import java.util.Arrays;
+
+// public class JobSequencingCompareToTest {
+//     @Test
+//     public void compareEqualProfits() {
+//         Job job1 = new Job('A', 3, 100);
+//         Job job2 = new Job('B', 1, 100);
+        
+//         int compareResult = job1.compareTo(job2);
+        
+//         assertEquals(0, compareResult);
+//     }
+    
+//     @Test
+//     public void compareHigherProfit() {
+//         Job job1 = new Job('A', 3, 100);
+//         Job job2 = new Job('B', 1, 200);
+        
+//         int compareResult = job1.compareTo(job2);
+        
+//         assertTrue(compareResult < 0); // Changed the assertion to expect a negative value since job1's profit is less than job2's profit
+//     }
+    
+//     @Test
+//     public void compareLowerProfit() {
+//         Job job1 = new Job('A', 3, 200);
+//         Job job2 = new Job('B', 1, 100);
+        
+//         int compareResult = job1.compareTo(job2);
+        
+//         assertTrue(compareResult > 0); // Changed the assertion to expect a positive value since job1's profit is more than job2's profit
+//     }
+    
+//     @Test
+//     public void compareWithNull() {
+//         Job job1 = new Job('A', 3, 200);
+        
+//         assertThrows(NullPointerException.class, () -> {
+//             job1.compareTo(null);
+//         });
+//     }
+// }
+
+
+
 package com.thealgorithms.greedyalgorithms;
 
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class JobSequencingCompareToTest {
     @Test
     public void compareEqualProfits() {
-        Job job1 = new Job('A', 3, 100);
-        Job job2 = new Job('B', 1, 100);
+        JobSequencing.Job job1 = new JobSequencing.Job('A', 3, 100);
+        JobSequencing.Job job2 = new JobSequencing.Job('B', 1, 100);
         
         int compareResult = job1.compareTo(job2);
         
@@ -87,8 +135,8 @@ public class JobSequencingCompareToTest {
     
     @Test
     public void compareHigherProfit() {
-        Job job1 = new Job('A', 3, 100);
-        Job job2 = new Job('B', 1, 200);
+        JobSequencing.Job job1 = new JobSequencing.Job('A', 3, 100);
+        JobSequencing.Job job2 = new JobSequencing.Job('B', 1, 200);
         
         int compareResult = job1.compareTo(job2);
         
@@ -97,8 +145,8 @@ public class JobSequencingCompareToTest {
     
     @Test
     public void compareLowerProfit() {
-        Job job1 = new Job('A', 3, 200);
-        Job job2 = new Job('B', 1, 100);
+        JobSequencing.Job job1 = new JobSequencing.Job('A', 3, 200);
+        JobSequencing.Job job2 = new JobSequencing.Job('B', 1, 100);
         
         int compareResult = job1.compareTo(job2);
         
@@ -107,7 +155,7 @@ public class JobSequencingCompareToTest {
     
     @Test
     public void compareWithNull() {
-        Job job1 = new Job('A', 3, 200);
+        JobSequencing.Job job1 = new JobSequencing.Job('A', 3, 200);
         
         assertThrows(NullPointerException.class, () -> {
             job1.compareTo(null);
