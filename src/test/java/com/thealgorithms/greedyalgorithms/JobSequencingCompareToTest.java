@@ -85,47 +85,47 @@ import java.util.Arrays;
 class JobSequencingCompareToTest {
     @Test
     void compareJobsWithDifferentProfits() {
-        Job job1 = new Job('A', 1, 100);
-        Job job2 = new Job('B', 2, 200);
+        JobSequencing.Job job1 = new JobSequencing.Job('A', 1, 100);
+        JobSequencing.Job job2 = new JobSequencing.Job('B', 2, 200);
         int result = job1.compareTo(job2);
         assertTrue(result > 0, "Job with higher profit should come after job with lower profit");
     }
 
     @Test
     void compareJobsWithEqualProfits() {
-        Job job1 = new Job('A', 1, 150);
-        Job job2 = new Job('B', 2, 150);
+      JobSequencing.Job job1 = new JobSequencing.Job('A', 1, 150);
+      JobSequencing.Job job2 = new JobSequencing.Job('B', 2, 150);
         int result = job1.compareTo(job2);
         assertEquals(0, result, "Jobs with equal profit should be considered equal");
     }
 
     @Test
     void compareJobWithItself() {
-        Job job1 = new Job('A', 1, 100);
+      JobSequencing.Job job1 = new JobSequencing.Job('A', 1, 100);
         int result = job1.compareTo(job1);
         assertEquals(0, result, "Comparing a job with itself should return zero");
     }
 
     @Test
     void compareJobsWithNegativeProfits() {
-        Job job1 = new Job('A', 1, -50);
-        Job job2 = new Job('B', 2, -100);
+        JobSequencing.Job job1 = new JobSequencing.Job('A', 1, -50);
+        JobSequencing.Job job2 = new JobSequencing.Job('B', 2, -100);
         int result = job1.compareTo(job2);
         assertTrue(result < 0, "Job with higher negative profit should come before job with lower negative profit");
     }
 
     @Test
     void compareJobsWithZeroProfit() {
-        Job job1 = new Job('A', 1, 0);
-        Job job2 = new Job('B', 2, 100);
+      JobSequencing.Job job1 = new JobSequencing.Job('A', 1, 0);
+        JobSequencing.Job job2 = new JobSequencing.Job('B', 2, 100);
         int result = job1.compareTo(job2);
         assertTrue(result > 0, "Job with zero profit should come after job with positive profit");
     }
 
     @Test
     void compareJobsWithLargeProfit() {
-        Job job1 = new Job('A', 1, Integer.MAX_VALUE);
-        Job job2 = new Job('B', 2, Integer.MAX_VALUE - 1);
+        JobSequencing.Job job1 = new JobSequencing.Job('A', 1, Integer.MAX_VALUE);
+        JobSequencing.Job job2 = new JobSequencing.Job('B', 2, Integer.MAX_VALUE - 1);
         int result = job1.compareTo(job2);
         assertTrue(result < 0, "Job with larger profit should come after job with smaller profit");
     }

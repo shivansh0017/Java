@@ -97,7 +97,7 @@ class MinimizingLatenessToStringTest {
     @Test
     void toStringWithValidJobDetails() {
         // Arrange
-        Job job = new Job("Job1", 5, 10);
+        MinimizingLateness.Job job = new MinimizingLateness.Job("Job1", 5, 10);
         job.startTime = 10;
         job.lateness = 0;
         // Act
@@ -109,7 +109,7 @@ class MinimizingLatenessToStringTest {
     @Test
     void toStringWithNullJobName() {
         // Arrange
-        Job job = new Job(null, 5, 10);
+        MinimizingLateness.Job job = new MinimizingLateness.Job(null, 5, 10);
         job.startTime = 10;
         job.lateness = 0;
         // Act
@@ -121,7 +121,7 @@ class MinimizingLatenessToStringTest {
     @Test
     void toStringWithNegativeStartTime() {
         // Arrange
-        Job job = new Job("Job1", 5, 10);
+        MinimizingLateness.Job job = new MinimizingLateness.Job("Job1", 5, 10);
         job.startTime = -5;
         job.lateness = 0;
         // Act
@@ -134,7 +134,7 @@ class MinimizingLatenessToStringTest {
     @MethodSource("provideArgumentsForToStringWithLargeValues")
     void toStringWithLargeValues(String jobName, int startTime, int processingTime, int lateness, String expectedResult) {
         // Arrange
-        Job job = new Job(jobName, processingTime, Integer.MAX_VALUE);
+        MinimizingLateness.Job job = new MinimizingLateness.Job(jobName, processingTime, Integer.MAX_VALUE);
         job.startTime = startTime;
         job.lateness = lateness;
         // Act

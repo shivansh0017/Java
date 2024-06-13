@@ -94,7 +94,7 @@ class MinimizingLatenessOfTest {
         int processingTime = 10;
         int deadline = 20;
         // Act
-        Job job = MinimizingLatenessOf.of(jobName, processingTime, deadline);
+        MinimizingLateness.Job job = MinimizingLateness.Job.of(jobName, processingTime, deadline);
         // Assert
         assertThat(job).isNotNull();
         assertThat(job.jobName).isEqualTo(jobName);
@@ -109,7 +109,7 @@ class MinimizingLatenessOfTest {
         int processingTime = 10;
         int deadline = 20;
         // Act
-        Job job = MinimizingLatenessOf.of(jobName, processingTime, deadline);
+        MinimizingLateness.Job job = MinimizingLateness.Job.of(jobName, processingTime, deadline);
         // Assert
         assertThat(job).isNotNull();
         assertThat(job.jobName).isEmpty();
@@ -124,7 +124,7 @@ class MinimizingLatenessOfTest {
         int processingTime = -10;
         int deadline = 20;
         // Act
-        Job job = MinimizingLatenessOf.of(jobName, processingTime, deadline);
+        MinimizingLateness.Job job = MinimizingLateness.Job.of(jobName, processingTime, deadline);
         // Assert
         assertThat(job).isNotNull();
         assertThat(job.jobName).isEqualTo(jobName);
@@ -139,7 +139,7 @@ class MinimizingLatenessOfTest {
         int processingTime = 10;
         int deadline = -20;
         // Act
-        Job job = MinimizingLatenessOf.of(jobName, processingTime, deadline);
+        MinimizingLateness.Job job = MinimizingLateness.Job.of(jobName, processingTime, deadline);
         // Assert
         assertThat(job).isNotNull();
         assertThat(job.jobName).isEqualTo(jobName);
@@ -154,7 +154,7 @@ class MinimizingLatenessOfTest {
         int processingTime = Integer.MAX_VALUE;
         int deadline = Integer.MAX_VALUE;
         // Act
-        Job job = MinimizingLatenessOf.of(jobName, processingTime, deadline);
+        MinimizingLateness.Job job = MinimizingLateness.Job.of(jobName, processingTime, deadline);
         // Assert
         assertThat(job).isNotNull();
         assertThat(job.jobName).isEqualTo(jobName);
@@ -166,7 +166,7 @@ class MinimizingLatenessOfTest {
     @MethodSource("provideJobCreationScenarios")
     void testJobCreationScenarios(String jobName, int processingTime, int deadline, String expectedJobName, int expectedProcessingTime, int expectedDeadline) {
         // Act
-        Job job = MinimizingLatenessOf.of(jobName, processingTime, deadline);
+        MinimizingLateness.Job job = MinimizingLateness.Job.of(jobName, processingTime, deadline);
         // Assert
         assertThat(job).isNotNull();
         assertThat(job.jobName).isEqualTo(expectedJobName);
