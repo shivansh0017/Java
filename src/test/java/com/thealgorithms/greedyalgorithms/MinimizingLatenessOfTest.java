@@ -98,46 +98,46 @@ These test scenarios cover various edge cases and error handling scenarios for t
 package com.thealgorithms.greedyalgorithms;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.junit.jupiter.MockitoExtension;
+// import org.mockito.junit.jupiter.MockitoExtension;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.Arrays;
 
-@ExtendWith(MockitoExtension.class)
+// @ExtendWith(MockitoExtension.class) 
 class MinimizingLatenessOfTest {
     @Test
     void validJobCreation() {
         // Act
-        Job job = Job.of("Job1", 10, 20);
+        MinimizingLateness.Job job = MinimizingLateness.Job.of("Job1", 10, 20);
         // Assert
         assertNotNull(job);
     }
     @Test
     void nullJobName() {
         // Act and Assert
-        NullPointerException exception = assertThrows(NullPointerException.class, () -> Job.of(null, 10, 20));
+        NullPointerException exception = assertThrows(NullPointerException.class, () -> MinimizingLateness.Job.of(null, 10, 20));
     }
     @Test
     void negativeProcessingTime() {
         // Act and Assert
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Job.of("Job1", -10, 20));
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> MinimizingLateness.Job.of("Job1", -10, 20));
     }
     @Test
     void negativeDeadline() {
         // Act and Assert
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Job.of("Job1", 10, -20));
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> MinimizingLateness.Job.of("Job1", 10, -20));
     }
     @Test
     void zeroProcessingTime() {
         // Act
-        Job job = Job.of("Job1", 0, 20);
+        MinimizingLateness.Job job = MinimizingLateness.Job.of("Job1", 0, 20);
         // Assert
         assertNotNull(job);
     }
     @Test
     void zeroDeadline() {
         // Act
-        Job job = Job.of("Job1", 10, 0);
+        MinimizingLateness.Job job = MinimizingLateness.Job.of("Job1", 10, 0);
         // Assert
         assertNotNull(job);
     }
@@ -146,6 +146,6 @@ class MinimizingLatenessOfTest {
     @Test
     void processingTimeGreaterThanDeadline() {
         // Act and Assert
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Job.of("Job1", 20, 10));
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> MinimizingLateness.Job.of("Job1", 20, 10));
     }
 }

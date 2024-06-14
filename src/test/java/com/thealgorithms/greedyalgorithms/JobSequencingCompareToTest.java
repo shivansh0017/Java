@@ -89,38 +89,39 @@ import java.util.Arrays;
 public class JobSequencingCompareToTest {
     @Test
     public void compareJobsWithDifferentProfits() {
-        Job job1 = new Job('A', 1, 10);
-        Job job2 = new Job('B', 1, 20);
+        JobSequencing.Job job1 = new JobSequencing.Job('A', 1, 10);
+        JobSequencing.Job job2 = new JobSequencing.Job('B', 1, 20);
         int result = job1.compareTo(job2);
         assertTrue(result < 0);
     }
     @Test
     public void compareJobsWithSameProfit() {
-        Job job1 = new Job('A', 1, 10);
-        Job job2 = new Job('B', 1, 10);
+        JobSequencing.Job job1 = new JobSequencing.Job('A', 1, 10);
+        JobSequencing.Job job2 = new JobSequencing.Job('B', 1, 10);
         int result = job1.compareTo(job2);
         assertEquals(0, result);
     }
     @Test
     public void compareJobWithNullProfit() {
         // Business logic improvement: handle null profit case in compareTo method
-        Job job1 = new Job('A', 1, 0);
-        job1.profit = null;
-        Job job2 = new Job('B', 1, 10);
+        JobSequencing.Job job1 = new JobSequencing.Job('A', 1, 0);
+        // job1.profit = null;
+        job1.profit = 0; // made profit 0 as integer cannot be null
+        JobSequencing.Job job2 = new JobSequencing.Job('B', 1, 10);
         Executable executable = () -> job1.compareTo(job2);
         assertThrows(NullPointerException.class, executable);
     }
     @Test
     public void compareJobsWithNegativeProfits() {
-        Job job1 = new Job('A', 1, -10);
-        Job job2 = new Job('B', 1, -20);
+        JobSequencing.Job job1 = new JobSequencing.Job('A', 1, -10);
+        JobSequencing.Job job2 = new JobSequencing.Job('B', 1, -20);
         int result = job1.compareTo(job2);
         assertTrue(result > 0);
     }
     @Test
     public void compareJobsWithZeroProfit() {
-        Job job1 = new Job('A', 1, 0);
-        Job job2 = new Job('B', 1, 0);
+        JobSequencing.Job job1 = new JobSequencing.Job('A', 1, 0);
+        JobSequencing.Job job2 = new JobSequencing.Job('B', 1, 0);
         int result = job1.compareTo(job2);
         assertEquals(0, result);
     }

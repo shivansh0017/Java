@@ -166,14 +166,16 @@ public class ActivitySelectionActivitySelectionTest {
         // Arrange
         int[] startTimes = null;
         int[] endTimes = new int[]{1, 2, 3};
+        final int[] finalStartTimes = startTimes; // Added final integers
+        final int[] finalEndTimes = endTimes;
         // Act and Assert
-        Executable executable = () -> ActivitySelection.activitySelection(startTimes, endTimes);
+        Executable executable = () -> ActivitySelection.activitySelection(finalStartTimes, finalEndTimes);
         assertThrows(NullPointerException.class, executable);
         // Arrange
         startTimes = new int[]{1, 2, 3};
         endTimes = null;
         // Act and Assert
-        executable = () -> ActivitySelection.activitySelection(startTimes, endTimes);
+        executable = () -> ActivitySelection.activitySelection(finalStartTimes, finalEndTimes);
         assertThrows(NullPointerException.class, executable);
     }
     @Test

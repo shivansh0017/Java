@@ -129,31 +129,31 @@ import java.util.Arrays;
 public class MinimizingLatenessToStringTest {
     @Test
     public void nullJobNameToString() {
-        Job job = new Job(null, 1, 2);
+        MinimizingLateness.Job job = new MinimizingLateness.Job(null, 1, 2);
         String result = job.toString();
         assertThat(result).contains("null");
     }
     @Test
     public void emptyJobNameToString() {
-        Job job = new Job("", 1, 2);
+      MinimizingLateness.Job job = new MinimizingLateness.Job("", 1, 2);
         String result = job.toString();
         assertThat(result).contains("");
     }
     @Test
     public void validJobNameToString() {
-        Job job = new Job("Job1", 1, 2);
+      MinimizingLateness.Job job = new MinimizingLateness.Job("Job1", 1, 2);
         String result = job.toString();
         assertThat(result).contains("Job1");
     }
     @Test
     public void zeroStartTimeToString() {
-        Job job = new Job("Job1", 0, 2);
+      MinimizingLateness.Job job = new MinimizingLateness.Job("Job1", 0, 2);
         String result = job.toString();
         assertThat(result).contains("startTime: 0");
     }
     @Test
     public void positiveStartTimeToString() {
-        Job job = new Job("Job1", 10, 2);
+      MinimizingLateness.Job job = new MinimizingLateness.Job("Job1", 10, 2);
         String result = job.toString();
         assertThat(result).contains("startTime: 10");
     }
@@ -166,21 +166,21 @@ public class MinimizingLatenessToStringTest {
     }
     @Test
     public void zeroLatenessToString() {
-        Job job = new Job("Job1", 1, 2);
+      MinimizingLateness.Job job = new MinimizingLateness.Job("Job1", 1, 2);
         job.lateness = 0;
         String result = job.toString();
         assertThat(result).contains("lateness: 0");
     }
     @Test
     public void positiveLatenessToString() {
-        Job job = new Job("Job1", 1, 2);
+      MinimizingLateness.Job job = new MinimizingLateness.Job("Job1", 1, 2);
         job.lateness = 10;
         String result = job.toString();
         assertThat(result).contains("lateness: 10");
     }
     @Test
     public void deadlineToString() {
-        Job job = new Job("Job1", 1, 2);
+      MinimizingLateness.Job job = new MinimizingLateness.Job("Job1", 1, 2);
         job.deadline = 10;
         String result = job.toString();
         // TODO: Update the Job class to include deadline in toString method
