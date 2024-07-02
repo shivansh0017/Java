@@ -53,7 +53,6 @@ Validation:
 // ********RoostGPT********
 package com.thealgorithms.greedyalgorithms;
 
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.Arrays;
 import org.junit.jupiter.api.*;
@@ -64,7 +63,7 @@ public class MinimizingLatenessToStringTest {
 
 	@Test
 	void testToStringWithDefaultValues() {
-		Job job = new Job(null, 0, 0);
+		MinimizingLateness.Job job = new MinimizingLateness.Job(null, 0, 0);
 		String expected = "null, startTime: 0, endTime: 0, lateness: 0";
 		String actual = job.toString();
 		assertEquals(expected, actual);
@@ -72,7 +71,7 @@ public class MinimizingLatenessToStringTest {
 
 	@Test
 	void testToStringWithNonDefaultValues() {
-		Job job = new Job("Job1", 5, 10);
+		MinimizingLateness.Job job = new MinimizingLateness.Job("Job1", 5, 10);
 		job.startTime = 1;
 		job.lateness = 2;
 		String expected = "Job1, startTime: 1, endTime: 6, lateness: 2";
@@ -82,7 +81,7 @@ public class MinimizingLatenessToStringTest {
 
 	@Test
 	void testToStringWithOverflowValues() {
-		Job job = new Job("Job1", Integer.MAX_VALUE, 10);
+		MinimizingLateness.Job job = new MinimizingLateness.Job("Job1", Integer.MAX_VALUE, 10);
 		job.startTime = Integer.MAX_VALUE;
 		String expected = "Job1, startTime: 2147483647, endTime: -2, lateness: 0";
 		String actual = job.toString();
@@ -91,7 +90,7 @@ public class MinimizingLatenessToStringTest {
 
 	@Test
 	void testToStringWithSpecialCharacters() {
-		Job job = new Job("@#Job$%^", 5, 10);
+		MinimizingLateness.Job job = new MinimizingLateness.Job("@#Job$%^", 5, 10);
 		job.startTime = 1;
 		job.lateness = 2;
 		String expected = "@#Job$%^, startTime: 1, endTime: 6, lateness: 2";
